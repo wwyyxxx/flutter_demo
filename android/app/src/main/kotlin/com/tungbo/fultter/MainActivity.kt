@@ -1,0 +1,6 @@
+package com.tungbo.fultter
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
