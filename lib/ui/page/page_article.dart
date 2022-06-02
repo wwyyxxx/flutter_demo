@@ -61,7 +61,7 @@ class _ArticlePageState extends State<ArticlePage> {
         Offstage(
           offstage: _isHide,
           child: RefreshIndicator(
-            onRefresh: _pullToRefresh(),
+            onRefresh: ()=> _pullToRefresh(),
             child: ListView.builder(
               itemBuilder: (context, i) => _buildItem(i),
               itemCount: articles.length + 1,
@@ -76,7 +76,7 @@ class _ArticlePageState extends State<ArticlePage> {
   _pullToRefresh() async {
     curPage = 0;
     Iterable<Future> futures = [_getArticlelist(), _getBanner()];
-    await Future.wait(futures);
+    ()=> Future.wait(futures);
     _isHide = false;
     setState(() {});
     return null;

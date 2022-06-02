@@ -9,13 +9,13 @@ class ArticleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: Text('文章',
-          style: const TextStyle(color: Colors.white)),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('文章',
+          style: TextStyle(color: Colors.white)),
         ),
-        body: new ArticlePage(),
+        body: const ArticlePage(),
       ),
     );
   }
