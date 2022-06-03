@@ -25,3 +25,7 @@
     two day:
         路由跳转  注意context
         动画设置
+
+    three day:
+        Plugin--通讯-原生通讯
+        混合开发--原生（通讯同Plugin库通讯）
