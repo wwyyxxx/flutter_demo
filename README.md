@@ -29,3 +29,13 @@
     three day:
         Plugin--通讯-原生通讯
         混合开发--原生（通讯同Plugin库通讯）
+
+    four day:
+        动画：forward->completed  reverse->dismissed
+            AnimationController
+            Tween 补间--如颜色改变
+            自定义动画....重写lerp()
+            Curve--插值器
+            AnimatedWidget
+            HeroAnimate： 共享元素动画--不能同一个tag
+                Stack大小为内容的大小
