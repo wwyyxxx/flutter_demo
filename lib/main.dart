@@ -1,22 +1,67 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:fultter/ui/page/page_article.dart';
+import 'package:flutter/services.dart';
+import 'package:fultter/tab_navigation.dart';
 
-void main() => runApp(new ArticleApp());
+import 'app_init.dart';
+import 'http/http_manger.dart';
 
+void main() {
+  runApp(MyApp());
+  if (Platform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  }
+}
 
-class ArticleApp extends StatelessWidget {
-  const ArticleApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    HttpManager.getData(
+      "http://baobab.kaiyanapp.com/api/v2/feed?num=1",
+      success: (result) {
+        print(result);
+      },
+      fail: (result){
+        print("fail:"+result);
+      }
+    );
+    return FutureBuilder(
+        future: AppInit.init(),
+        builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+          print(snapshot.connectionState);
+          var widget = snapshot.connectionState == ConnectionState.done
+              ? TabNavigation()
+              : Scaffold(
+                  body: Center(
+                    // 圈
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+          return GetMaterialAppWidget(child: widget);
+        });
+  }
+}
+
+class GetMaterialAppWidget extends StatefulWidget {
+  final Widget? child;
+
+  const GetMaterialAppWidget({Key? key, this.child}) : super(key: key);
+
+  @override
+  State<GetMaterialAppWidget> createState() => _GetMaterialAppWidgetState();
+}
+
+class _GetMaterialAppWidgetState extends State<GetMaterialAppWidget> {
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('文章',
-          style: TextStyle(color: Colors.white)),
-        ),
-        body: const ArticlePage(),
-      ),
+      title: 'Tungbo',
+      initialRoute: '/',
+      routes: {'/': (BuildContext context) => widget.child!},
     );
   }
 }
