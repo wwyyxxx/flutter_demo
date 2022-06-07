@@ -48,3 +48,8 @@
             导航返回拦截--WillPopScope
             异步UI更新--FutureBuilder
         
+    Day 6:
+        1.首页的Banner图View
+        2.bottomNavigationBar跳转方式更改
+        3.ViewModel使用
+        4.extended_image/provider

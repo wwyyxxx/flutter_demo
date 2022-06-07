@@ -13,7 +13,7 @@ class LoadingStateWidget extends StatelessWidget {
   late Widget? child;
 
   LoadingStateWidget(
-      {required Key key, this.viewState = ViewState.loading, this.retry, this.child})
+      {Key? key, this.viewState = ViewState.loading, this.retry, this.child})
       : super(key: key);
 
   @override

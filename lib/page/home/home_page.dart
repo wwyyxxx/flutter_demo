@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fultter/config/string.dart';
+import 'package:fultter/page/home/home_body_page.dart';
 import 'package:fultter/widget/app_bar.dart';
 import 'package:fultter/widget/loading_state_widget.dart';
 
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: appBar(WyxString.home,
           showBack: false),
-      body: Container(color: Colors.red),
+      body: HomeBodyPage(),
     );
   }
 

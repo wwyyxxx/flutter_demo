@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fultter/page/home/home_page.dart';
 import 'package:fultter/utils/toast_util.dart';
+import 'package:fultter/viewmodel/tab_navigation_viewmodel.dart';
+import 'package:fultter/widget/provider_widget.dart';
 
 import 'config/string.dart';
 
@@ -57,14 +59,6 @@ class _TabNavigationState extends State<TabNavigation> {
               );
             },
           ),
-          /* BottomNavigationBar(
-            currentIndex: _currentIndex,
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Color(0xff000000),
-            unselectedItemColor: Color(0xff9a9a9a),
-            items: _item(),
-            onTap: _onTap,
-          ),*/
         ),
         onWillPop: _onWillPop);
   }

@@ -5,7 +5,7 @@ class ProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
   final T? model;//控件对应的数据
   final Widget? child;
 
-  final Widget Function(BuildContext context, T model, Widget child) builder;//绑定数据的控件
+  final Widget Function(BuildContext context, T model, Widget? child) builder;//绑定数据的控件
   final Function(T)?onModelInit; //数据初始化方法
 
   const ProviderWidget(
