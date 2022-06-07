@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fultter/tab_navigation.dart';
-
+import 'package:get/get.dart';
 import 'app_init.dart';
 import 'http/http_manger.dart';
 
@@ -63,5 +63,12 @@ class _GetMaterialAppWidgetState extends State<GetMaterialAppWidget> {
       initialRoute: '/',
       routes: {'/': (BuildContext context) => widget.child!},
     );
+    // return GetMaterialApp(
+    //   title: 'Tungbo',
+    //   initialRoute: '/',
+    //   getPages: [
+    //     GetPage(name: "/", page: ()=> widget.child!)
+    //   ],
+    // );
   }
 }

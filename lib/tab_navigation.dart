@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fultter/page/home/home_page.dart';
 import 'package:fultter/utils/toast_util.dart';
 
 import 'config/string.dart';
@@ -16,7 +15,7 @@ class TabNavigation extends StatefulWidget {
 class _TabNavigationState extends State<TabNavigation> {
   late DateTime lastTime;
   int _currentIndex = 0;
-
+  PageController _pageController = PageController();
   Widget _currentBody = Container(
     color: Colors.blue,
   );
@@ -24,23 +23,56 @@ class _TabNavigationState extends State<TabNavigation> {
   @override
   Widget build(BuildContext context) {
     print("_TabNavigationState");
-    return WillPopScope(child: Scaffold(
-      body: _currentBody,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Color(0xff000000),
-        unselectedItemColor: Color(0xff9a9a9a),
-        items: _item(),
-        onTap: _onTap,
-      ),
-    ), onWillPop: _onWillPop);
+    return WillPopScope(
+        child: Scaffold(
+          body: PageView(
+            controller: _pageController,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              // Container(color: Colors.blue),
+              HomePage(),
+              Container(color: Colors.brown),
+              Container(color: Colors.amber),
+              Container(color: Colors.red),
+            ],
+          ),
+          bottomNavigationBar: ProviderWidget<TabNavigationViewModel>(
+            model: TabNavigationViewModel(),
+            builder: (context, model, child) {
+              return BottomNavigationBar(
+                currentIndex: model.currentIndex,
+                // 固定title
+                type: BottomNavigationBarType.fixed,
+                selectedItemColor: Color(0xff000000),
+                unselectedItemColor: Color(0xff9a9a9a),
+                items: _item(),
+                // index 值为0，1，2，3
+                onTap: (index) {
+                  if (model.currentIndex != index) {
+                    // 直接跳转不带动画，自动 setState
+                    _pageController.jumpToPage(index);
+                    model.changeBottomTabIndex(index);
+                  }
+                },
+              );
+            },
+          ),
+          /* BottomNavigationBar(
+            currentIndex: _currentIndex,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: Color(0xff000000),
+            unselectedItemColor: Color(0xff9a9a9a),
+            items: _item(),
+            onTap: _onTap,
+          ),*/
+        ),
+        onWillPop: _onWillPop);
   }
 
   _onTap(int index) {
     switch (index) {
       case 0:
-        _currentBody = Container(color: Colors.blue);
+        _currentBody = HomePage();
         break;
       case 1:
         _currentBody = Container(color: Colors.brown);

@@ -51,6 +51,9 @@ dev_dependencies:
   cupertino_icons: ^1.0.2
   flutter_splash_screen: ^1.0.0+6
   http: ^0.13.4
+  get: ^4.6.5
+  # 4.InheritedWidget的包装器 ，使它们更易于使用和更可重用。
+  provider: ^5.0.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

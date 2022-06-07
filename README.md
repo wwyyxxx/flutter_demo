@@ -30,7 +30,7 @@
         Plugin--通讯-原生通讯
         混合开发--原生（通讯同Plugin库通讯）
 
-    four day:
+    fourth day:
         动画：forward->completed  reverse->dismissed
             AnimationController
             Tween 补间--如颜色改变
@@ -39,3 +39,12 @@
             AnimatedWidget
             HeroAnimate： 共享元素动画--不能同一个tag
                 Stack大小为内容的大小
+    
+    fifth day:
+        1.网络请求框架
+        2.闪屏页框架
+        3.启动逻辑初始化
+        4.底部BottomNavagetion逻辑添加
+            导航返回拦截--WillPopScope
+            异步UI更新--FutureBuilder
+        
