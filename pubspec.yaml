@@ -57,6 +57,17 @@ dev_dependencies:
   # 7.图片扩展库
   extended_image: ^6.2.1
   flutter_swiper: ^1.1.6
+  # 8.下拉刷新和上拉加载的库
+  pull_to_refresh: ^2.0.0
+  # 9.依赖于Dart常用工具类库common_utils，以及对其他第三方库封装
+  flustars: ^2.0.1
+  # 10.分享
+  share_plus: ^4.0.7
+  # 11.视频播放库
+  video_player: ^2.4.4
+  # 12.对 video_player库 进行了一层封装，便于上层使用
+  chewie: ^1.3.3
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
