@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fultter/page/detail/vide_detail_page.dart';
 import 'package:fultter/tab_navigation.dart';
 import 'package:get/get.dart';
 import 'app_init.dart';
-import 'http/http_manger.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return FutureBuilder(
         future: AppInit.init(),
         builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
-          print(snapshot.connectionState);
+          // print(snapshot.connectionState);
           var widget = snapshot.connectionState == ConnectionState.done
               ? TabNavigation()
               : Scaffold(
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   ),
                 );
+          // print(widget);
           return GetMaterialAppWidget(child: widget);
         });
   }
@@ -58,17 +59,18 @@ class GetMaterialAppWidget extends StatefulWidget {
 class _GetMaterialAppWidgetState extends State<GetMaterialAppWidget> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tungbo',
-      initialRoute: '/',
-      routes: {'/': (BuildContext context) => widget.child!},
-    );
     // return GetMaterialApp(
     //   title: 'Tungbo',
     //   initialRoute: '/',
-    //   getPages: [
-    //     GetPage(name: "/", page: ()=> widget.child!)
-    //   ],
+    //   routes: {'/': (BuildContext context) => widget.child!},
     // );
+    return GetMaterialApp(
+      title: 'Tungbo',
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: "/", page: ()=> widget.child!),
+        GetPage(name: '/detail', page: () => VideoDetailPage()),
+      ],
+    );
   }
 }

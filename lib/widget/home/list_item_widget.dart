@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fultter/page/detail/vide_detail_page.dart';
+import 'package:fultter/utils/navigaor_util.dart';
 
 import '../../model/common_item.dart';
 import '../../utils/cache_image.dart';
@@ -27,6 +29,7 @@ class ListItemWidget extends StatelessWidget {
         GestureDetector(
           onTap: () {
             print('点击了,跳转详情页');
+            toNamed("/detail", item?.data!);
             // TODO:跳转详情页
           },
           child: Padding(
@@ -130,7 +133,7 @@ class ListItemWidget extends StatelessWidget {
           decoration: BoxDecoration(color: Colors.black54),
           padding: EdgeInsets.all(5),
           child: Text(
-              '${item!.data!.duration}',
+              '${item!.data!.duration}秒',
             // formatDateMsByMS(item!.data!.duration * 1000),
             style: TextStyle(
                 color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
