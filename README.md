@@ -53,3 +53,17 @@
         2.bottomNavigationBar跳转方式更改
         3.ViewModel使用
         4.extended_image/provider
+    
+    Day 7:
+        首页ListView
+            1.ListView.separated
+            2.GestureDetector
+            3.EdgeInsets.fromLTRB
+            4.Offstage
+
+    Day 8:
+        添加视频详情页面
+            1.VideoPlay -- Chewie
+            2.ProviderWidget
+            3.Column、AnnotatedRegion、Expanded、ClipOval、BoxDecoration、Divider、Row、DecorationImage
+            4.CustomScrollView、SliverToBoxAdapter、SliverList、SliverChildBuilderDelegate
