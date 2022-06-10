@@ -28,9 +28,8 @@ class ListItemWidget extends StatelessWidget {
         // GestureDetector：手势识别 -- Inkwell
         GestureDetector(
           onTap: () {
-            print('点击了,跳转详情页');
+            print('点击了,跳转详情页: ${item?.data!}');
             toNamed("/detail", item?.data!);
-            // TODO:跳转详情页
           },
           child: Padding(
             padding: EdgeInsets.fromLTRB(15, 10, 15, 10),

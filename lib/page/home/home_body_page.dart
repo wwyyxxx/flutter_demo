@@ -6,8 +6,6 @@ import 'package:fultter/state/base_list_state.dart';
 import '../../viewmodel/home/home_page_viewmodel.dart';
 import '../../widget/home/banner_widget.dart';
 import '../../widget/home/list_item_widget.dart';
-import '../../widget/loading_state_widget.dart';
-import '../../widget/provider_widget.dart';
 
 class HomeBodyPage extends StatefulWidget {
   const HomeBodyPage({Key? key}) : super(key: key);
