@@ -1,5 +1,6 @@
 # FlutterDemo
-
+![image](https://github.com/wwyyxxx/FlutterDemo/Screenshot_20220613_163340.png)
+![image](https://github.com/wwyyxxx/FlutterDemo/Screenshot_20220613_163403.png)
     one day:
         1.flutter sdk环境配置
         2.demo运行
