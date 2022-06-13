@@ -65,7 +65,6 @@ class _VideoDetailPageState extends State<VideoDetailPage>
   }
 
   Scaffold _scaffold(model) {
-    print("_scaffold ${data.playUrl}");
     return Scaffold(
       backgroundColor: Colors.amberAccent,
       body: Column(
@@ -77,9 +76,13 @@ class _VideoDetailPageState extends State<VideoDetailPage>
             child: _statusBar(),
             value: SystemUiOverlayStyle.light,
           ),
-          VideoPlayWidget(
-            key: videoKey,
-            url: data.playUrl,
+          Hero(
+            // tag相同的两个widget，跳转时自动关联动画
+            tag: '${data.id}',
+            child: VideoPlayWidget(
+              key: videoKey,
+              url: data.playUrl,
+            ),
           ),
           Expanded(
             flex: 1,
@@ -111,7 +114,9 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     return SliverList(
         delegate: SliverChildBuilderDelegate((context, index) {
       if (model.itemList?[index].type == 'videoSmallCard') {
-        return VideoItemWidget(data: model?.itemList[index].data,);
+        return VideoItemWidget(
+          data: model?.itemList[index].data,
+        );
       }
       return Padding(
         padding: EdgeInsets.only(left: 10, top: 10),

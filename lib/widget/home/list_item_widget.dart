@@ -81,7 +81,7 @@ class ListItemWidget extends StatelessWidget {
       // Hero动画：界面跳转，关联动画
       child: Hero(
         // tag相同的两个widget，跳转时自动关联动画
-        tag: '${item!.data!.id}${item!.data!.time}',
+        tag: '${item!.data!.id}',
         child: cacheImage(
           item!.data!.cover!.feed!,
           width: MediaQuery.of(context).size.width,
