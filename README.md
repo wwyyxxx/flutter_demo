@@ -1,6 +1,9 @@
 # FlutterDemo
-![image](https://github.com/wwyyxxx/FlutterDemo/Screenshot_20220613_163340.png)
-![image](https://github.com/wwyyxxx/FlutterDemo/Screenshot_20220613_163403.png)
+<!-- ![image](https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163403.png)
+![image](https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163340.png) -->
+<img src="https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163403.png" width="270" height="635">         <img src="https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163340.png" width="270" height="635">
+
+
     one day:
         1.flutter sdk环境配置
         2.demo运行
