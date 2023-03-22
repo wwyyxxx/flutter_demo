@@ -53,3 +53,21 @@
         2.bottomNavigationBar跳转方式更改
         3.ViewModel使用
         4.extended_image/provider
+
+    Day N:
+        1.现有项目接入Flutter
+            Flutter 当前仅支持 x86_64，armeabi-v7a, arm64-v8a 构建预编（AOT）的库
+            cmd- flutter create -t module --org com.example my_flutter
+            源码依赖：
+                setBinding(new Binding([gradle: this]))
+                evaluate(new File(
+                    settingsDir.parentFile, //注意路径
+                    'my_flutter/.android/include_flutter.groovy'
+                ))
+                implementation project(':flutter')
+        
+        2.添加 FlutterFragment
+            通过 FlutterFragment.createDefault() 创建
+            fragmentManager 进行提交展示
+            Activity 回调某些操作 （onPostResume、onNewIntent、onBackPressed、onRequestPermissionsResult）
+            FlutterEngine / FlutterEngineCache 提前初始化和缓存
