@@ -20,19 +20,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // HttpManager.getData(
-    //   "http://baobab.kaiyanapp.com/api/v2/feed?num=1",
-    //   success: (result) {
-    //     print(result);
-    //   },
-    //   fail: (result){
-    //     print("fail:"+result);
-    //   }
-    // );
     return FutureBuilder(
         future: AppInit.init(),
         builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
-          // print(snapshot.connectionState);
           var widget = snapshot.connectionState == ConnectionState.done
               ? TabNavigation()
               : Scaffold(

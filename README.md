@@ -1,4 +1,8 @@
 # FlutterDemo
+<!-- ![image](https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163403.png)
+![image](https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163340.png) -->
+<img src="https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163403.png" width="270" height="635">         <img src="https://github.com/wwyyxxx/FlutterDemo/blob/main/Screenshot_20220613_163340.png" width="270" height="635">
+
 
     one day:
         1.flutter sdk环境配置
@@ -53,6 +57,21 @@
         2.bottomNavigationBar跳转方式更改
         3.ViewModel使用
         4.extended_image/provider
+    
+    Day 7:
+        首页ListView
+            1.ListView.separated
+            2.GestureDetector
+            3.EdgeInsets.fromLTRB
+            4.Offstage
+
+    Day 8:
+        添加视频详情页面
+            1.VideoPlay -- Chewie
+            2.ProviderWidget
+            3.Column、AnnotatedRegion、Expanded、ClipOval、BoxDecoration、Divider、Row、DecorationImage
+            4.CustomScrollView、SliverToBoxAdapter、SliverList、SliverChildBuilderDelegate
+
 
     Day N:
         1.现有项目接入Flutter
@@ -61,11 +80,11 @@
             源码依赖：
                 setBinding(new Binding([gradle: this]))
                 evaluate(new File(
-                    settingsDir.parentFile, //注意路径
-                    'my_flutter/.android/include_flutter.groovy'
+                settingsDir.parentFile, //注意路径
+                'my_flutter/.android/include_flutter.groovy'
                 ))
                 implementation project(':flutter')
-        
+
         2.添加 FlutterFragment
             通过 FlutterFragment.createDefault() 创建
             fragmentManager 进行提交展示
